@@ -1,0 +1,25 @@
+<h1>All Posts</h1>
+<!-- <%= form_tag posts_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %> -->
+
+<% @posts.each do |post| %>
+  <%= link_to post.title, post_path(post)  %><br>
+  <%= post.body %>
+  <hr>
+<% end %>
+
+<% if @page > 0 %>
+  <%= link_to "<", root_path(page: @page-1, search: session[:word])  %>
+<% end %>
+
+<% @pages.each do |p|  %>
+  <%= link_to "#{p}", posts_path(page: p-1) %>
+<% end %>
+
+<% if @page < @pages.last-1 %>
+  <%= link_to ">", root_path(page: @page + 1, search: session[:word])  %>
+<% end %>
