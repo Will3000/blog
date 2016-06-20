@@ -7,34 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= form_tag root_path(page: 1), method: :get do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search"%>
-    </p>
-  <% end %>
-
-  <%= link_to("Home",root_path) %>
-  |
-  <%= link_to("About",about_path) %>
-  |
-  <%= link_to("Posts",posts_path) %>
-  |
-  <% if session[:user_id] %>
-    Hello, <%= User.find(session[:user_id]).full_name %>
-    <%= link_to "Sign Out", sessions_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign Up", new_user_path%>
-    <%= link_to "Sign In", new_session_path%>
-  <% end %>
-  <hr>
-
-  <% if flash[:notice] %>
-    <div class="flash-notice"><%= flash[:notice] %></div>
-  <% elsif flash[:alert] %>
-    <div class="alert-notice"><%= flash[:alert] %></div>
-  <% end %>
-
-  <%= yield %>
+  <%= render "/layouts/navbar" %>
+  <div class="container-main">
+    <% if flash[:notice] %>
+      <div class="flash-notice"><%= flash[:notice] %></div>
+    <% elsif flash[:alert] %>
+      <div class="alert-notice"><%= flash[:alert] %></div>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>

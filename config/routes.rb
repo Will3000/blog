@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     delete :destroy, on: :collection
   end
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :edit, :show, :update, :destroy]
 
   # get  "questions/new"  => "questions#new", as: :new_question
   # post "/questions"     => "questions#create", as: :questions

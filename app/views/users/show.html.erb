@@ -1,0 +1,8 @@
+<h1>Profile Information</h1>
+<div>
+  User Name: <%= @user.full_name %>
+</div>
+<div>
+  Email: <%= @user.email %>
+</div>
+<%= link_to "Update Information", edit_user_path(session[:user_id]) %>
