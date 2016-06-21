@@ -1,16 +1,21 @@
 <div class="navbar">
   <h1>Welcome to Myapp</h1>
-  <div class="links">
+  <div class="menu">
     <%= link_to("Home",root_path) %>
     <%= link_to("About",about_path) %>
     <%= link_to("Posts",posts_path(:page => 1)) %>
-    <% if session[:user_id] %>
-      <%= link_to "Hello, #{User.find(session[:user_id]).full_name}", user_path(session[:user_id]) %>
-      <%= link_to "Sign Out", sessions_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign Up", new_user_path%>
-      <%= link_to "Sign In", new_session_path%>
-    <% end %>
+    <div class="dropdown">
+      <span>My Dropdown Menu</span>
+      <ul class="dropdown-content">
+        <% if session[:user_id] %>
+          <li><%= link_to "Hello, #{User.find(session[:user_id]).full_name}", user_path(session[:user_id]) %></li>
+          <li><%= link_to "Sign Out", sessions_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_path%></li>
+          <li><%= link_to "Sign In", new_session_path%></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <br>
   <div class="search-bar">
