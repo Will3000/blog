@@ -1,8 +1,9 @@
 class Post < ActiveRecord::Base
-  has_many :comments, dependent: :destroy
   belongs_to :category
   belongs_to :user
-
+  has_many :comments, dependent: :destroy
+  has_many :favourites, dependent: :destroy
+  has_many :fav_users, through: :favourite, source: :user
 
   validates :title, presence: true,
                     uniqueness: true,
@@ -23,5 +24,17 @@ class Post < ActiveRecord::Base
     else
       self.body
     end
+  end
+
+  def rand_color
+    ["teach-me", "", "handyman", "pick-up-delivery"].sample
+  end
+
+  def favourited_by?(user)
+    favourites.exists?(user: user)
+  end
+
+  def favourited_for(user)
+    favourites.find_by_user_id user
   end
 end

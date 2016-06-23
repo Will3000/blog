@@ -7,24 +7,12 @@
 <% end %> -->
 
 <% @posts.each do |post| %>
-  <div class="post">
-    <%= link_to post.title, post_path(post)  %><br>
-    <%= post.body %>
-    <hr>
-  </div>
+  <a class="button <%= post.rand_color %>" href="<%= post_path(post) %>">
+    <span class="item"><%= post.title %></span>
+    <span class="meta category">Auther: <%= post.user.first_name if post.user%></span>
+    <i class="clock"></i>
+    <span class="meta created"><%= post.created_at %></span>
+  </a>
 <% end %>
 
-
-<div class="pages">
-  <% if @page > 1 %>
-  <%= link_to "<", posts_path(page: @page-1)  %>
-  <% end %>
-
-  <% @pages.each do |p|  %>
-    <%= link_to "#{p}", posts_path(page: p) %>
-  <% end %>
-  
-  <% if @page < @pages.last %>
-  <%= link_to ">", posts_path(page: @page + 1)  %>
-  <% end %>
-</div>
+<%= paginate @posts, :theme => 'twitter-bootstrap-3' %>

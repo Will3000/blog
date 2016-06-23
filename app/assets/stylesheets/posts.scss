@@ -1,43 +1,6 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.field_with_errors input{
-  border-color: red;
-}
-
-.comment{
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-}
-.edits{
-  float:right;
-}
-
-.container-main h1{
-  margin-bottom: 5%;
-}
-
-.author{
-  position: absolute;
-  bottom: 20%;
-  right: 5%;
-}
-
-.all-comments{
-  position: absolute;
-  bottom: -15%;
-  left: 0;
-}
-
-.post{
-  margin:2%;
-}
-
-.pages{
-  text-align: center;
-}
-
-.pages a{
-  margin-right: 2px;
+body{
+  background-image: url(image-path('weather.png'));
 }

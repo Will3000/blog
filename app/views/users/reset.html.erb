@@ -1,0 +1,8 @@
+<h2> We will send you a reset password link to your email</h2>
+<%= form_tag reset_password_path do %>
+  <div>
+    Email
+    <%= email_field_tag :email %>
+  </div>
+  <%= submit_tag("Reset") %>
+<% end %>

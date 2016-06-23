@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :create]
+  before_action :authenticate_user!, except: [:new, :create, :reset]
   before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -25,15 +25,20 @@ class UsersController < ApplicationController
 
   def update
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :old_password, :password, :password_confirmation)
-    if @user && @user.authenticate(user_params[:old_password]) && user_params[:old_password] != user_params[:password]
+    if current_user && @user.authenticate(user_params[:old_password]) && user_params[:old_password] != user_params[:password]
       user_params.delete(:old_password)
       @user.update user_params
-      redirect_to user_path(session[:user_id])
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "Invalid Updates"
       render :edit
     end
   end
+
+  def reset
+    
+  end
+
 
   private
   def find_user

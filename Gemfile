@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
+gem 'bootstrap-kaminari-views'
 
-# Use kaminari to paginate pages 
+gem "font-awesome-rails"
+# Use kaminari to paginate pages
 gem 'kaminari'
 # Use faker to populate the database with fake data
 gem 'faker'
