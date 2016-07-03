@@ -8,12 +8,16 @@ Rails.application.routes.draw do
   get "/about" => "home#about"
   resources :posts do
     resources :favourites, only: [:create, :destroy]
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy] do
+      delete "/remove-rating" => "comments#remove_rating", as: :remove_rating
+    end
+    resources :tags, only: [:create, :destroy]
   end
 
   resources :sessions, only: [:create, :new, :destroy] do
     delete :destroy, on: :collection
   end
+
 
   resources :users
   get "/reset" => "users#reset", as: :reset_password

@@ -6,3 +6,5 @@ end
 ["Sports", "Technology", "Finance", "Hardware", "Software", "Entertainment", "Politic", "Education", "Housing", "Games"].each do |c|
   Category.create title: c
 end
+
+30.times { Tag.create(name: Faker::Hacker.adjective)}

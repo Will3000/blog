@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new post_params
-    @post.user = User.find(session[:user_id])
+    @post.user = current_user
     if @post.save
       redirect_to post_path(@post)
     else
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :category_id, :user_id)
+    params.require(:post).permit(:title, :body, :category_id, :user_id, {tag_ids: []})
   end
 
   def find_post

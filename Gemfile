@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
+gem 'bootstrap-sass'
+gem 'bootstrap-glyphicons'
+gem 'bootstrap_form'
+gem 'bootstrap-timepicker-rails'
 gem 'bootstrap-kaminari-views'
 
 gem "font-awesome-rails"
@@ -18,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem "letter_opener", group: :development
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -41,11 +45,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
-  gem 'rails-erd'
   gem 'factory_girl_rails'
 end
 
 group :development do
+  gem "rails-erd"
   gem 'hirb'
   gem 'awesome_print'
   gem 'interactive_editor'

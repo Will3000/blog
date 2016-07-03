@@ -11,19 +11,24 @@
  * file per style scope.
  *
  *= require font-awesome
- *= require_tree .
+ *= require bootstrap-timepicker
+ *= require rails_bootstrap_forms
  *= require_self
+ *= require_tree .
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 .container-main{
   padding-left: 20px;
 }
 
-/*.right-nav {
+.right-nav {
   width: 300;
   display: inline-block;
   float: right;
-}*/
+}
 
 .search-bar{
   float: right;
