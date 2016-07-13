@@ -5,13 +5,21 @@ module ApplicationHelper
 
   def render_stars(comment)
     arr = []
-    comment.rating.star_count.times do |star|
-      arr << "#{fa_icon("star")}"
+    if comment.rating.star_count
+      comment.rating.star_count.times do |star|
+        arr << "#{fa_icon("star")}"
+      end
+
+      (5 - comment.rating.star_count).times do |star|
+        arr << "#{fa_icon("star-o")}"
+      end
+      arr.join(" ").html_safe
+    else
+      5.times do
+        arr << "#{fa_icon("star")}"
+      end
+      arr.join(" ").html_safe
     end
-    (5 - comment.rating.star_count).times do |star|
-      arr << "#{fa_icon("star-o")}"
-    end
-    arr.join(" ").html_safe
   end
 
   def seach_icon

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/about" => "home#about"
   resources :posts do
     resources :favourites, only: [:create, :destroy]
-    resources :comments, only: [:create, :destroy] do
+    resources :comments, only: [:create, :update, :destroy] do
       delete "/remove-rating" => "comments#remove_rating", as: :remove_rating
     end
     resources :tags, only: [:create, :destroy]
@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   end
 
 
-  resources :users
+  resources :users do
+    resources :favourites, only: [:index]
+  end
   get "/reset" => "users#reset", as: :reset_password
   get "/new-password" => "users#change", as: :change_password
   # get  "questions/new"  => "questions#new", as: :new_question

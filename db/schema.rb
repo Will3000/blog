@@ -66,9 +66,9 @@ ActiveRecord::Schema.define(version: 20160624083337) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "comment_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "star_count"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "star_count", default: 0
   end
 
   add_index "ratings", ["comment_id"], name: "index_ratings_on_comment_id", using: :btree

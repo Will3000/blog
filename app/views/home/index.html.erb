@@ -3,10 +3,17 @@
   <% @posts.each do |post| %>
     <a class="button <%= post.rand_color %>" href="<%= post_path(post) %>">
       <span class="item"><%= post.title %></span>
-      <span class="meta category">Auther: <%= post.user.first_name if post.user%></span>
+      <span class="meta category">Author: <%= post.user.first_name if post.user%></span>
       <i class="clock"></i>
       <span class="meta created"><%= post.created_at %></span>
     </a>
   <% end %>
   <%= paginate @posts, :theme => 'twitter-bootstrap-3' %>
+<% else %>
+  <div class="jumbotron jumbo-home">
+    <h1>Welcome To Blog</h1>
+    <p class="Intro">Your amazing story starts here,<br> share it with everyone!</p>
+    <a href=<%=new_user_path%>  class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Sign Up</div></a>
+    <a href= "http://codecore.ca" , class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Learn More About CodeCore</div></a>
+  </div>
 <% end %>

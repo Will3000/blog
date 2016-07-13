@@ -1,0 +1,11 @@
+<%= form_for [@post,@comment], remote: true do |f| %>
+  <%= render "posts/star" %>
+  <% if @comment.rating %>
+    <%= link_to "Clear", post_comment_remove_rating_path(@post,@comment.id),method: :delete %>
+  <% end %>
+  <div>
+    <%#= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -1,42 +1,41 @@
-<h1><%= @post.title.titleize %></h1>
-<p><%= @post.body %></p>
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <button type="button" class="btn btn-primary">Sony</button>
+</div>
+
+<div id="post">
+  <h1><%= @post.title.titleize %></h1>
+  <p><%= @post.body %></p>
+</div>
+<label>Tags: </label>
 <p><%= @post.tags.map {|t| t.name.capitalize}.join(", ") %></p>
 <div class="edits">
-  <% if @post.favourited_by?(current_user) %>
-    <%= link_to "Rmove Favourite", post_favourite_path( @post, @post.favourited_for(current_user) ), method: :delete %>
+  <div id="favourite">
+    <%= render "favourites/favourite" %>
+  </div>
+  <% if user_signed_in? %>
+    <%= link_to "Edit", edit_post_path(@post) %>
+    <%= link_to "Delete", post_path(@post),
+                          method: :delete,
+                          data: {confirm: "Are you sure you want to delete this post?"}%>
   <% else %>
-    <%= link_to "Add to Favourite", post_favourites_path(@post), method: :post %>
+    <a href="#" class="notLoggedIn">Edit</a>
+    <a href="#" class="notLoggedIn">Delete</a>
+
   <% end %>
-  <%= link_to "Edit", edit_post_path(@post) %>
-  <%= link_to "Delete", post_path(@post),
-                        method: :delete,
-                        data: {confirm: "Are you sure you want to delete this post?"}%>
 </div>
 <div class="star-rating">
 </div>
-<div class="comment">
-  <h2>Write A Comment</h2>
-  <%= form_for [@post,@comment] do |f| %>
-    <%= render "posts/star" %>
-    <% if @comment.rating %>
-      <%= link_to "Clear", post_comment_remove_rating_path(@post,@comment.id),method: :delete %>
-    <% end %>
-    <div>
-      <%#= f.label :body %>
-      <%= f.text_area :body %>
-    </div>
-    <%= f.submit %>
-  <% end %>
+<h2>Write A Comment</h2>
+<div id="comment">
+  <%= render "comments/form" %>
 </div>
 
-<div class="all-comments">
-  <h2>All Comments</h2>
+<h2>All Comments</h2>
+<div id="comments">
   <% @post.comments.order("created_at DESC").each do |com| %>
     <%#= render partial: "/posts/star2", :locals => {:star_count => com.rating.star_count} %>
-    <span class="bright-star"><%= render_stars(com) %></span>
-    <div>
-      <%= com.body %>
-    </div>
-    <p>Created By <%= com.user.full_name if com.user %><p>
+    <%= render "comments/comment", comment: com %>
   <% end %>
 </div>

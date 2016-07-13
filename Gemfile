@@ -4,7 +4,7 @@ gem 'bootstrap-glyphicons'
 gem 'bootstrap_form'
 gem 'bootstrap-timepicker-rails'
 gem 'bootstrap-kaminari-views'
-
+gem 'rack-cors', :require => 'rack/cors'
 gem "font-awesome-rails"
 # Use kaminari to paginate pages
 gem 'kaminari'

@@ -1,0 +1,26 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar {
+  background-color: rgb(14, 63, 106);
+}
+
+.container{
+  padding-bottom: 50px;
+  min-height: 700px;
+}
+
+.navbar-nav a:hover, #footer> div.links > a > i:hover{
+  color: white !important;
+}
+.navbar a {
+  color: rgba(255,255,255,0.8) !important;
+}
+
+.container h1,h2{
+  text-shadow: 1px 1px blue !important;
+}
+
+.jumbotron{
+  text-align: center;
+}

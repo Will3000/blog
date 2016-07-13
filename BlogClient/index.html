@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="mustache.js"></script>
+    <script src="main.js"></script>
+    <title>Blog Client</title>
+  </head>
+  <body>
+    <script id="post-template" type="x-templ-mustache">
+      <div class="post" data-id={{id}}>
+        <a href='#'>{{title}}</a>
+      </div>
+      <hr>
+    </script>
+    <div id="posts"></div>
+  </body>
+</html>

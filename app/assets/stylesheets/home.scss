@@ -19,17 +19,6 @@
   box-sizing: border-box;
 }
 
-// body {
-//   background: #e1e1e1;
-//   padding: 1em;
-//   font: normal normal normal 12px/1.333 'Helvetica Neue', arial, sans-serif;
-//   font-size: .75rem;
-//   color: #95979d;
-// }
-.container-main{
-  padding-right: 2em;
-}
-
 .button {
   display: block;
   position: relative;
@@ -136,9 +125,23 @@ i {
   bottom: 47%;
   margin-left: -.0625em;
 }
+
 //
 .clock:after {
   transform: rotate( 135deg );
   left: 63%;
   top: 47%;
+}
+
+a.btn.btn-primary.btn-lg.home-buttons {
+  display: inline-block;
+  padding: 30px;
+  width: 30%;
+  margin: 10px;
+}
+
+#foot-note{
+  color: white;
+  float: right;
+  padding-right: 2em;
 }

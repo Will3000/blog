@@ -11,9 +11,16 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
+//= require bootstrap-sprockets
 //= require bootstrap-timepicker
 //= require_tree .
+
+
+$(document).ready(function(){
+  $(".edits").on("click", ".notLoggedIn", function(event){
+    event.preventDefault();
+    $("#loginModal").modal("toggle");
+  });
+});

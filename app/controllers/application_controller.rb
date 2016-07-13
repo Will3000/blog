@@ -21,5 +21,5 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_path, alert: "please sign in" unless user_signed_in?
   end
 
-  
+
 end

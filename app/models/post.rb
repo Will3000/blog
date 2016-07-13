@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :favourites, dependent: :destroy
-  has_many :fav_users, through: :favourite, source: :user
+  has_many :fav_users, through: :favourites, source: :user
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 

@@ -11,17 +11,30 @@
  * file per style scope.
  *
  *= require font-awesome
- *= require bootstrap-timepicker
  *= require rails_bootstrap_forms
  *= require_self
  *= require_tree .
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
-.container-main{
-  padding-left: 20px;
+.notice {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid black;
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-radius: 3px
+}
+
+.notice.flash-notice{
+  border-left-color: green;
+  border-right-color: green;
+  color: green;
+}
+.notice.alert-notice{
+  border-left-color: red;
+  border-right-color: red;
+  color: red;
 }
 
 .right-nav {
@@ -64,9 +77,11 @@
 }
 
 .dropdown-menu li:hover .sub-menu {
-    visibility: visible;
+  visibility: visible;
 }
-
+.dropdown > ul > li > a{
+  color: black !important;
+}
 .dropdown:hover .dropdown-menu {
     display: block;
 }
@@ -91,4 +106,30 @@
     left: 10px;
     top: 11px;
     left: -6px;
+}
+
+#footer{
+  position: relative;
+  right: 0px;
+  bottom: 0px;
+  height: 70px;
+  width: 100%;
+  background-color: rgb(14, 63, 106);
+}
+
+#footer>.links{
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.wordwrap {
+   white-space: pre-wrap;      /* CSS3 */
+   white-space: -moz-pre-wrap; /* Firefox */
+   white-space: -pre-wrap;     /* Opera <7 */
+   white-space: -o-pre-wrap;   /* Opera 7 */
+   word-wrap: break-word;      /* IE */
 }
