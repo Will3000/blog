@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'rails_12factor'
 gem 'omniauth-twitter'
 gem "twitter"
 gem "fog-aws"
