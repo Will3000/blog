@@ -1,5 +1,5 @@
 300.times do
-  Post.create title: Faker::ChuckNorris.fact
+  Post.create title: Faker::ChuckNorris.fact,
               body:  Faker::Lorem.paragraph
 end
 
