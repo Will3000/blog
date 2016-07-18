@@ -1,4 +1,11 @@
 source 'https://rubygems.org'
+
+gem 'omniauth-twitter'
+gem "twitter"
+gem "fog-aws"
+gem "mini_magick"
+gem 'carrierwave'
+gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'bootstrap-glyphicons'
 gem 'bootstrap_form'

@@ -75,3 +75,147 @@ body{
 .checkbox {
   margin-right: 1em;
 }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.button {
+  display: block;
+  position: relative;
+  padding: .75em 5em .75em 1em;
+  border-radius: .25em;
+  margin-bottom: .5em;
+  background: #fff;
+}
+.Finance{
+  box-shadow:
+    /* regular bottom */
+    0 .0625em .125em rgba(0, 0, 0, .125),
+    /* inset bottom */
+    inset 0 -.25em 0 -.125em rgba(0, 0, 0, .125),
+    /* category color (left) */
+    inset 1em 0 0 -.7em rgba(200, 0, 120, .5),
+    /* arrow background (right) */
+    inset -2em 0 0 -.3em rgba(0, 0, 0, .05);
+}
+
+.Technology {
+  box-shadow:
+    0 .0625em .125em rgba(0, 0, 0, .125),
+    inset 0 -.25em 0 -.125em rgba(0, 0, 0, .125),
+    inset 1em 0 0 -.7em rgba(0, 95, 210, .5),
+    inset -2em 0 0 -.3em rgba(0, 0, 0, .05);
+}
+
+.Sports {
+  box-shadow:
+    0 .0625em .125em rgba(0, 0, 0, .125),
+    inset 0 -.25em 0 -.125em rgba(0, 0, 0, .125),
+    inset 1em 0 0 -.7em rgba(20, 160, 0, .5),
+    inset -2em 0 0 -.3em rgba(0, 0, 0, .05);
+}
+
+.Education {
+  box-shadow:
+    0 .0625em .125em rgba(0, 0, 0, .125),
+    inset 0 -.25em 0 -.125em rgba(0, 0, 0, .125),
+    inset 1em 0 0 -.7em rgba(210, 15, 0, .5),
+    inset -2em 0 0 -.3em rgba(0, 0, 0, .05);
+}
+
+.Entertainment{
+  box-shadow:
+    0 .0625em .125em rgba(0, 0, 0, .125),
+    inset 0 -.25em 0 -.125em rgba(0, 0, 0, .125),
+    inset 1em 0 0 -.7em #337ab7,
+    inset -2em 0 0 -.3em rgba(0, 0, 0, .05);
+}
+
+.Politic{
+  box-shadow:
+    0 .0625em .125em rgba(0, 0, 0, .125),
+    inset 0 -.25em 0 -.125em rgba(0, 0, 0, .125),
+    inset 1em 0 0 -.7em rgba(255, 0, 0, .8),
+    inset -2em 0 0 -.3em rgba(0, 0, 0, .05);
+}
+
+.item {
+  font-weight: bold;
+  color: #000;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.item:after {
+  content: '';
+  display: block;
+  height: 0;
+  width: 100%;
+}
+
+.meta {
+  margin-left: .25em;
+}
+
+.category,
+.expiry,
+i {
+  font-size: 12px;
+  line-height: 2; /* 16 "px" */
+}
+
+
+.clock {
+  display: inline-block;
+  position: relative;
+  width: 1.333em;
+  height: 1.333em;
+  margin-left: .333em;
+  border: .25em solid #95979d;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.clock:before,
+.clock:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: .125em;
+  height: .25em;
+  background: #95979d;
+}
+
+.clock:before {
+  left: 50%;
+  bottom: 47%;
+  margin-left: -.0625em;
+}
+
+//
+.clock:after {
+  transform: rotate( 135deg );
+  left: 63%;
+  top: 47%;
+}
+
+a.btn.btn-primary.technology{
+  background-color: rgba(0, 95, 210, 0.5);
+}
+a.btn.btn-primary.sports{
+  background-color: rgba(20, 160, 0, 0.5);
+}
+a.btn.btn-primary.education{
+  background-color: rgba(210, 15, 0, 0.5);
+}
+a.btn.btn-primary.politic{
+  background-color: rgba(255, 0, 0, 0.8);
+}
+a.btn.btn-primary.finance{
+  background-color: rgba(200, 0, 120, 0.5)
+}

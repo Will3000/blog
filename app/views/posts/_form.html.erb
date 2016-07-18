@@ -1,17 +1,7 @@
-
-<%= @post.errors.full_messages.join(", ") %>
-<%= bootstrap_form_for @post do |f| %>
-  <div>
-    <%= f.text_field :title %>
-  </div><br>
-  <div>
-    <%= f.text_area :body, :cols => 10, :rows => 20 %>
-  </div><br>
-  <div>
-    <%= f.collection_select :category_id, Category.order(:title), :id, :title %>
-  </div>
-  <div>
-    <%= f.collection_check_boxes(:tag_ids, Tag.order(:name), :id, :name) %>
-  </div>
-  <%= f.submit %>
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body, as: :text, :cols => 10, :rows => 20%>
+  <%= f.association :category %>
+  <%= f.association :tags, as: :check_boxes %>
+  <%= f.submit({class: "btn btn-primary"}) %>
 <% end %>

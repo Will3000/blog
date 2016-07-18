@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624083337) do
+ActiveRecord::Schema.define(version: 20160718055225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,10 +93,22 @@ ActiveRecord::Schema.define(version: 20160624083337) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "password_digest"
+    t.string   "avatar"
+    t.string   "uid"
+    t.string   "provider"
+    t.string   "twitter_consumer_token"
+    t.string   "twitter_consumer_secret"
+    t.string   "twitter_raw_data"
+    t.string   "api_key"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.string   "auth_token"
   end
+
+  add_index "users", ["api_key"], name: "index_users_on_api_key", unique: true, using: :btree
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"

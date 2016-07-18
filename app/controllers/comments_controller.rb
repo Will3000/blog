@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new comment_params
     @comment.user = current_user
 
-    rating = Rating.create( params[:star_count]? {star_count: params[:star_count]} : {star_count: 0} ) 
+    rating = Rating.create( params[:star_count]? {star_count: params[:star_count]} : {star_count: 0} )
     @comment.rating = rating
     respond_to do |format|
       if @comment.save
@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
         format.js   { render :create_success }
       else
         format.html { render "posts/show" }
+        format.js   { render :create_failure }
       end
     end
   end
@@ -34,9 +35,5 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:body, :star_count)
-  end
-
-  def authenticate_user!
-    redirect_to new_session_path, alert: "please sign in" unless user_signed_in?
   end
 end

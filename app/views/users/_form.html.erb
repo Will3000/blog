@@ -1,0 +1,43 @@
+
+
+<div id="signUpModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content login-1">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <div class="sign-up-modal">
+          <%= form_tag users_path do %>
+            <h1>Create An Account</h1>
+            <div>
+              <label>First Name: </label>
+              <%= text_field_tag :first_name %>
+            </div>
+            <div>
+              <label>Last Name: </label>
+              <%= text_field_tag :last_name %>
+            </div>
+            <div>
+              <label>Email: </label>
+              <%= email_field_tag :email %>
+            </div>
+            <div>
+              <label>Password: </label>
+              <%= password_field_tag :password %>
+            </div>
+            <div>
+              <label>Password Confirmation: </label>
+              <%= password_field_tag :password_confirmation %>
+            </div>
+            <%= submit_tag "Sign Up"%>
+          <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

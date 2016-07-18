@@ -1,9 +1,9 @@
 300.times do
-  Post.create title: Faker::Book.title,
-              body:  Faker::StarWars.quote
+  Post.create title: Faker::ChuckNorris.fact
+              body:  Faker::Lorem.paragraph
 end
 
-["Sports", "Technology", "Finance", "Hardware", "Software", "Entertainment", "Politic", "Education", "Housing", "Games"].each do |c|
+["Sports", "Technology", "Finance", "Entertainment", "Politic", "Education"].each do |c|
   Category.create title: c
 end
 

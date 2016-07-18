@@ -1,6 +1,17 @@
 <h2>Favourite Posts</h2>
 
 <% @favourites.each do |f| %>
-  <%= link_to f.title, post_path(f) %>
-  <hr>
+  <div class="col-sm-6 col-md-4 col-lg-3">
+    <div class="fav-posts">
+      <h3>
+        <%= link_to f.title, post_path(f) %>
+      </h3>
+      <div>
+        <%= link_to f.body, post_path(f) %>
+      </div>
+      <div class="author">
+        Author: <%= f.user.first_name if f.user %>
+      </div>
+    </div>
+  </div>
 <% end  %>

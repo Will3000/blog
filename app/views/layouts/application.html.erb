@@ -5,7 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
+  <script>
+    $(document).ready(function(){
+      $(.tech).on('click', function(){
+        $("#posts").filter(".Technology");
+      });
+    });
+  </script>
 </head>
 <body>
   <%= render "/layouts/navbar" %>
@@ -20,6 +26,7 @@
   </div>
 
   <%= render "sessions/form"%>
+  <%= render "users/form"%>
   <%= render "layouts/footer" %>
 </body>
 

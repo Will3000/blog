@@ -7,7 +7,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    if params[:user]
+      user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar)
+    else
+      user_params = params.permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar) unless params[:user]
+    end
+
     @user = User.new user_params
     if @user.save
       sign_in(@user)
@@ -24,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    user_params = params.require(:user).permit(:first_name, :last_name, :email, :old_password, :password, :password_confirmation)
+    user_params = params.require(:user).permit(:first_name, :last_name, :email, :old_password, :password, :password_confirmation, :avatar)
     if current_user && @user.authenticate(user_params[:old_password]) && user_params[:old_password] != user_params[:password]
       user_params.delete(:old_password)
       @user.update user_params
@@ -36,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   def reset
-    
+
   end
 
 

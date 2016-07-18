@@ -1,22 +1,12 @@
-<%= @user.errors.full_messages.join(", ") %>
+
 <div class="sign-up">
-  <%= bootstrap_form_for @user do |f| %>
-    <h1>Create An Account</h1>
-    <div>
-      <%= f.text_field :first_name %>
-    </div>
-    <div>
-      <%= f.text_field :last_name %>
-    </div>
-    <div>
-      <%= f.email_field :email %>
-    </div>
-    <div>
-      <%= f.password_field :password %>
-    </div>
-    <div>
-      <%= f.password_field :password_confirmation %>
-    </div>
-    <%= f.submit %>
+  <%= simple_form_for @user do |f| %>
+    <h1>Sign Up</h1>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <%= f.input :avatar %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
 </div>
