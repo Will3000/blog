@@ -9,13 +9,15 @@
       </div>
       <div class="modal-body">
         <%= form_tag sessions_path do %>
-          <div>
+          <div class="form-group">
             <%= label_tag :email %><br>
-            <%= email_field_tag :email %>
+            <%#= email_field_tag :email %>
+            <input type="email" name="email" id="email" class="form-control">
           </div><br>
           <div>
             <%= label_tag :password %><br>
-            <%= password_field_tag :password %>
+            <%#= password_field_tag :password %>
+            <input type="password" name="password" id="password" class="form-control">
           </div><br>
           <%= submit_tag "Sign In" %>
           <!-- <%#= link_to "Forget Password?", password_resets_path%> -->
