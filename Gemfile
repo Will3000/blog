@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-gem 'rails_12factor'
+
+gem 'cancancan', '~> 1.10'
 gem 'omniauth-twitter'
 gem "twitter"
 gem "fog-aws"
@@ -53,6 +54,10 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 group :development do

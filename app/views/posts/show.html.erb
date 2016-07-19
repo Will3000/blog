@@ -9,7 +9,7 @@
   <div id="favourite">
     <%= render "favourites/favourite" %>
   </div>
-  <% if user_signed_in? %>
+  <% if user_signed_in? && @post == current_user%>
     <%= link_to "Edit", edit_post_path(@post) %>
     <%= link_to "Delete", post_path(@post),
                           method: :delete,
