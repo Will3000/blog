@@ -71,10 +71,15 @@ body{
   border-radius: 5px;
   text-align: center;
   min-height: 500px;
+  position: relative;
 }
 
 .author {
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
 }
+
 .checkbox {
   margin-right: 1em;
 }

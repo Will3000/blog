@@ -22,10 +22,12 @@
 </div>
 <div class="star-rating">
 </div>
-<h2>Write A Comment</h2>
-<div id="comment">
-  <%= render "comments/form" %>
-</div>
+<% if user_signed_in?  %>
+  <h2>Write A Comment</h2>
+  <div id="comment">
+    <%= render "comments/form" %>
+  </div>
+<% end %>
 
 <h2>All Comments</h2>
 <div id="comments">
