@@ -1,8 +1,10 @@
 
 <div id="post">
-  <h1><%= @post.title.titleize %></h1>
+  <h2><%= @post.title.titleize %></h2>
   <p><%= @post.body %></p>
+  <p class="author"><i>Created By: <%= @post.user.full_name %></i></p>
 </div>
+
 <label>Tags: </label>
 <p><%= @post.tags.map {|t| t.name.capitalize}.join(", ") %></p>
 <div class="edits">
@@ -17,7 +19,6 @@
   <% end %>
     <!-- <a href="#" class="notLoggedIn">Edit</a>
     <a href="#" class="notLoggedIn">Delete</a> -->
-
 </div>
 <div class="star-rating">
 </div>
