@@ -7,5 +7,5 @@ CarrierWave.configure do |config|
   }
   config.fog_directory  = 'awesome-answer'                          # required
   config.fog_public     = false                                        # optional, defaults to true
-  config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" } # optional, defaults to {}
+  config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" } # opional, defaults to {}
 end

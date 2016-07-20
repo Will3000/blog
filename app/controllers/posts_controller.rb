@@ -8,12 +8,12 @@
       posts = Post.where(category_id: params[:category_id])
       @pages = posts.count
       @page = params[:page].to_i
-      @posts = posts.page(@page).per(10)
+      @posts = posts.page(@page).per(20)
     else
       @pages = (1..(Post.count/10.0).ceil).to_a
       @page = params[:page].to_i
       # @posts = Post.order(created_at: :desc).sublist(@page * 10)
-      @posts = Post.order(created_at: :desc).page(@page).per(10)
+      @posts = Post.order(created_at: :desc).page(@page).per(20)
     end
   end
 

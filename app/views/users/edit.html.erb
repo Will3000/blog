@@ -1,13 +1,32 @@
 
-
+<script>
+$(document).ready(function(){
+  $('.edit_user').submit(function(){
+    if($('#password').hasClass('in') === false){
+      $('#password').remove();
+    }
+  })
+})
+</script>
 
 <%= simple_form_for @user do |f| %>
   <h1>Edit Profile</h1>
+  <%= f.input :email %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
-  <%= f.input :old_password %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
   <%= f.input :avatar %>
+  <a class="btn btn-primary" data-toggle="collapse" data-target="#password">Change Password</a>
+  <div id="password" class="collapse">
+    <%= f.input :old_password %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+  </div>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
+
+
+
+<div id="password" class="collapse">
+  <input class="string optional form-control" type="text" value="wilson" name="user[first_name]" id="user_first_name">
+
+</div>

@@ -5,12 +5,18 @@
   background-color: rgb(14, 63, 106);
 }
 
+
+
 .container{
   padding-bottom: 50px;
-  min-height: 700px;
+  min-height: 550px;
 }
 
-.navbar-nav a:hover, #footer> div.links > a > i:hover{
+.navbar-nav a:hover{
+  background-color: #337ab7 !important;
+}
+
+#footer> div.links > a > i:hover{
   color: white !important;
 }
 .navbar a {
@@ -23,8 +29,13 @@
 
 .jumbotron{
   text-align: center;
+  margin-top: 10%;
 }
 
 .btn-group{
   padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
 }
