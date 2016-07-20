@@ -18,7 +18,11 @@
   <div class="jumbotron jumbo-home">
     <h1>Welcome To Blog</h1>
     <p class="Intro">Your amazing story starts here,<br> share it with everyone!</p>
-    <a href=<%=new_user_path%>  class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Sign Up</div></a>
-    <a href= "http://codecore.ca" , class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Learn More About CodeCore</div></a>
+    <% if user_signed_in? %>
+      <a href=<%=new_post_path%>  class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Write A Story</div></a>
+    <% else %>
+      <a href=<%=new_user_path%>  class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Sign Up</div></a>
+    <% end %>
+    <a href= "/about" , class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Learn More About This Website</div></a>
   </div>
 <% end %>

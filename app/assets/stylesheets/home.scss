@@ -14,7 +14,15 @@
  */
 
 body{
- background-image: url(image-path('blog_background.png'));
+ background-image: url(image-path('sayagata.png'));
+}
+
+.about-body{
+  text-align: center;
+}
+
+.about-body > p {
+  font-size: 20px;
 }
 
 a.btn.btn-primary.btn-lg.home-buttons {
@@ -22,4 +30,9 @@ a.btn.btn-primary.btn-lg.home-buttons {
   padding: 30px;
   width: 30%;
   margin: 10px;
+}
+
+body > div.container > div > p:nth-child(3){
+  padding-top: 20px;
+  text-align: center;
 }

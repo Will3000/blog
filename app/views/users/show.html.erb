@@ -1,11 +1,17 @@
 <h1>Profile Information</h1>
-<% if @user.avatar %>
-  <%= image_tag @user.avatar.url(:medium) %>
-<% end %>
-<div>
-  User Name: <%= @user.full_name %>
+<div id="profile">
+  <% if @user.avatar.file %>
+    <%= image_tag @user.avatar.url(:medium) %>
+  <% else %>
+    <%= image_tag("default_profile_picture.png") %>
+  <% end %>
+  <div>
+    User Name: <%= @user.full_name %>
+  </div>
+  <div>
+    Email: <%= @user.email %>
+  </div>
 </div>
-<div>
-  Email: <%= @user.email %>
+<div class="update">
+  <%= link_to "Update Information", edit_user_path(session[:user_id]), :class => 'btn btn-primary' %>
 </div>
-<%= link_to "Update Information", edit_user_path(session[:user_id]) %>

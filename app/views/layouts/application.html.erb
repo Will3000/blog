@@ -17,12 +17,14 @@
   <%= render "/layouts/navbar" %>
 
   <div class="container">
-    <% if flash[:notice] %>
-      <div class="notice flash-notice"><%= flash[:notice] %></div>
-    <% elsif flash[:alert] %>
-      <div class="notice alert-notice"><%= flash[:alert] %></div>
-    <% end %>
-    <%= yield %>
+    <div class="main-body">
+      <% if flash[:notice] %>
+        <div class="notice flash-notice"><%= flash[:notice] %></div>
+      <% elsif flash[:alert] %>
+        <div class="notice alert-notice"><%= flash[:alert] %></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </div>
 
   <%= render "sessions/form"%>
