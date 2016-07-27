@@ -15,9 +15,8 @@
 </head>
 <body>
   <%= render "/layouts/navbar" %>
-
-  <div class="container">
-    <div class="main-body">
+  <!-- <div class="<%# set_background_image_class(yield(:background_image_class)) %>"> -->
+    <div class="container-fluid">
       <% if flash[:notice] %>
         <div class="notice flash-notice"><%= flash[:notice] %></div>
       <% elsif flash[:alert] %>
@@ -25,7 +24,7 @@
       <% end %>
       <%= yield %>
     </div>
-  </div>
+  <!-- </div> -->
 
   <%= render "sessions/form"%>
   <%= render "users/form"%>

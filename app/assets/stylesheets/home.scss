@@ -17,6 +17,39 @@ body{
  background-image: url(image-path('sayagata.png'));
 }
 
+.techs{
+  text-align: center;
+  padding-top: 40px;
+}
+
+.icons{
+  display: inline-block;
+  width: 80px;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.icons>img {
+  height: 100%;
+  width: 100%;
+  display:block;
+  margin:auto;
+}
+
+.home-background{
+  background-image: url(image-path('blog_background.png'));
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 120%;
+  margin-left: -40px;
+  margin-top: -20px;
+}
+
 .about-body{
   text-align: center;
 }
