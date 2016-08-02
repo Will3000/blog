@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :tags, only: [:create, :destroy]
   end
 
-  resources :sessions, only: [:create, :new, :destroy] do
+  resources :sessions, only: [:create, :new] do
     delete :destroy, on: :collection
   end
 

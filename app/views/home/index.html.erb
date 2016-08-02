@@ -16,17 +16,15 @@
 
   <%= paginate @posts, :theme => 'twitter-bootstrap-3' %>
 <% else %>
-  <div class="container">
-    <div class="jumbotron jumbo-home">
-      <h1>Welcome To Blog</h1>
-      <p class="Intro">Your amazing story starts here,<br> share it with everyone!</p>
-      <% if user_signed_in? %>
-        <a href=<%=new_post_path%>  class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Write A Story</div></a>
-      <% else %>
-        <a href=<%=new_user_path%>  class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Sign Up</div></a>
-      <% end %>
-      <a href= "/about" , class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Learn More About This Website</div></a>
-    </div>
+  <div class="jumbotron jumbo-home">
+    <h1>Welcome To Blog</h1>
+    <p class="Intro">Your amazing story starts here,<br> share it with everyone!</p>
+    <% if user_signed_in? %>
+      <a href=<%=new_post_path%>  class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Write A Story</div></a>
+    <% else %>
+      <a href=<%=new_user_path%>  class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Sign Up</div></a>
+    <% end %>
+    <a href= "/about" , class="btn btn-primary btn-lg home-buttons hvr-bob"><div class= "wordwrap">Learn More About This Website</div></a>
   </div>
 <div class="home-background"></div>
 <% end %>

@@ -16,7 +16,7 @@
 <body>
   <%= render "/layouts/navbar" %>
   <!-- <div class="<%# set_background_image_class(yield(:background_image_class)) %>"> -->
-    <div class="container-fluid">
+    <div class="container">
       <% if flash[:notice] %>
         <div class="notice flash-notice"><%= flash[:notice] %></div>
       <% elsif flash[:alert] %>
